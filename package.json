@@ -1,8 +1,26 @@
 {
-    "name": "@backgammon-network/ui",
+    "name": "backgammon-ui",
     "version": "0.1.0",
     "description": "React backgammon board and UI primitives",
+    "keywords": [
+        "backgammon",
+        "react",
+        "board",
+        "ui",
+        "svg",
+        "tailwind",
+        "radix-ui"
+    ],
+    "homepage": "https://github.com/ikidnapmyself/backgammon-ui#readme",
+    "bugs": {
+        "url": "https://github.com/ikidnapmyself/backgammon-ui/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ikidnapmyself/backgammon-ui.git"
+    },
     "license": "MIT",
+    "author": "Burak",
     "type": "module",
     "sideEffects": [
         "**/*.css"
@@ -21,10 +39,19 @@
         "dist",
         "styles"
     ],
+    "publishConfig": {
+        "access": "public",
+        "provenance": true
+    },
+    "engines": {
+        "node": ">=20"
+    },
     "scripts": {
-        "build": "tsc -p tsconfig.build.json",
+        "clean": "rm -rf dist",
+        "build": "npm run clean && tsc -p tsconfig.build.json",
         "typecheck": "tsc --noEmit",
-        "test": "vitest run"
+        "test": "vitest run",
+        "prepublishOnly": "npm run typecheck && npm test && npm run build"
     },
     "peerDependencies": {
         "react": "^18.0.0 || ^19.0.0",
