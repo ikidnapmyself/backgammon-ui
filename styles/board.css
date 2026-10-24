@@ -1,0 +1,339 @@
+:root {
+    --board-rail-hi: #5b5e66;
+    --board-rail-lo: #2f3137;
+    --board-felt-hi: #3a8a68;
+    --board-felt: #25664c;
+    --board-felt-lo: #154030;
+    --board-point-a: #e4d8ba;
+    --board-point-b: #a33a48;
+    --board-bar: #2a2c31;
+    --board-ink: #f4f1ea;
+    --board-muted: rgba(255, 255, 255, 0.55);
+    --board-gold: #d6b26e;
+}
+
+.dark {
+    --board-rail-hi: #2a2c31;
+    --board-rail-lo: #0d0e11;
+    --board-felt-hi: #2a6a50;
+    --board-felt: #1a4a39;
+    --board-felt-lo: #0c281f;
+    --board-point-a: #d3c6a6;
+    --board-point-b: #8a2f3b;
+    --board-bar: #16171b;
+}
+
+.bgb {
+    border-radius: 1.96% / 2.51%;
+    box-shadow:
+        0 2px 4px -1px rgb(0 0 0 / 0.18),
+        0 22px 44px -18px rgb(0 0 0 / 0.45);
+}
+
+.bgb__svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    user-select: none;
+}
+
+.bgb__stop-rail-hi {
+    stop-color: var(--board-rail-hi);
+}
+
+.bgb__stop-rail-lo {
+    stop-color: var(--board-rail-lo);
+}
+
+.bgb__stop-felt-hi {
+    stop-color: var(--board-felt-hi);
+}
+
+.bgb__stop-felt {
+    stop-color: var(--board-felt);
+}
+
+.bgb__stop-felt-lo {
+    stop-color: var(--board-felt-lo);
+}
+
+.bgb__frame {
+    stroke: rgba(255, 255, 255, 0.1);
+}
+
+.bgb__felt {
+    stroke: rgba(0, 0, 0, 0.6);
+    stroke-width: 1.5;
+}
+
+.bgb__bar {
+    fill: var(--board-bar);
+    stroke: rgba(255, 255, 255, 0.07);
+}
+
+.bgb__recess {
+    fill: rgba(0, 0, 0, 0.35);
+    stroke: rgba(255, 255, 255, 0.05);
+}
+
+.bgb__point--a {
+    fill: var(--board-point-a);
+    opacity: 0.86;
+}
+
+.bgb__point--b {
+    fill: var(--board-point-b);
+    opacity: 0.92;
+}
+
+.bgb__num {
+    font: 600 11px var(--font-sans);
+    fill: rgba(255, 255, 255, 0.4);
+    text-anchor: middle;
+}
+
+.bgb__hit {
+    cursor: pointer;
+    outline: none;
+}
+
+.bgb__hit :is(rect, polygon) {
+    fill: transparent;
+    stroke: none;
+}
+
+.bgb__hit .bgb__hit-area {
+    fill: transparent;
+    stroke: none;
+}
+
+.bgb__hit-dot {
+    fill: rgba(255, 255, 255, 0.95);
+    stroke: rgba(0, 0, 0, 0.35);
+    stroke-width: 1.5;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
+    pointer-events: none;
+}
+
+.bgb__hit--selectable :is(rect, polygon):not(.bgb__hit-area) {
+    fill: rgba(255, 236, 190, 0.3);
+}
+
+.bgb__hit--selectable {
+    filter: drop-shadow(0 0 8px rgba(255, 226, 150, 0.85));
+}
+
+.bgb__hit--target :is(rect, polygon):not(.bgb__hit-area) {
+    fill: rgba(255, 255, 255, 0.28);
+}
+
+.bgb__hit--hover :is(rect, polygon):not(.bgb__hit-area) {
+    fill: rgba(255, 255, 255, 0.45);
+}
+
+.bgb__hit--selected :is(rect, polygon):not(.bgb__hit-area) {
+    fill: rgba(255, 236, 190, 0.3);
+}
+
+.bgb__hit--selected {
+    filter: drop-shadow(0 0 9px rgba(255, 226, 150, 0.95));
+}
+
+.bgb__hit:focus-visible :is(rect, polygon):not(.bgb__hit-area) {
+    stroke: #fff;
+    stroke-width: 3;
+}
+
+.bgb__pips text {
+    font: 600 17px var(--font-sans);
+    font-variant-numeric: tabular-nums;
+    fill: var(--board-ink);
+    text-anchor: middle;
+}
+
+.bgb__pips .bgb__pips-label {
+    font: 500 10px var(--font-sans);
+    fill: var(--board-muted);
+}
+
+.bgb__checkers {
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.55));
+}
+
+.checker-stop-0-hi {
+    stop-color: #fffdf7;
+}
+
+.checker-stop-0 {
+    stop-color: #e9e2d2;
+}
+
+.checker-stop-0-lo {
+    stop-color: #bdb39c;
+}
+
+.checker-stop-1-hi {
+    stop-color: #5a5f6a;
+}
+
+.checker-stop-1 {
+    stop-color: #25282e;
+}
+
+.checker-stop-1-lo {
+    stop-color: #0c0d10;
+}
+
+.bgb__arrow {
+    fill: none;
+    stroke: var(--arrow);
+    stroke-width: 5;
+    stroke-linecap: round;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.bgb__head {
+    fill: var(--arrow);
+}
+
+.bgb__tone--played {
+    --arrow: #e5e7eb;
+}
+
+.bgb__tone--good {
+    --arrow: #34d399;
+}
+
+.bgb__tone--doubtful {
+    --arrow: #fbbf24;
+}
+
+.bgb__tone--error {
+    --arrow: #f97316;
+}
+
+.bgb__tone--blunder {
+    --arrow: #ef4444;
+}
+
+.bgb__tone--best {
+    --arrow: #34d399;
+}
+
+.bgb__arrow.bgb__tone--best {
+    stroke-dasharray: 10 7;
+}
+
+.checker--0 > circle:first-child,
+
+.checker--0 > .checker__slab {
+    stroke: rgba(60, 50, 30, 0.45);
+    stroke-width: 1;
+}
+
+.checker--1 > circle:first-child,
+
+.checker--1 > .checker__slab {
+    stroke: rgba(214, 178, 110, 0.6);
+    stroke-width: 1.2;
+}
+
+.checker__ring {
+    fill: none;
+    stroke-width: 1.5;
+}
+
+.checker--0 .checker__ring {
+    stroke: rgba(60, 50, 30, 0.16);
+}
+
+.checker--1 .checker__ring {
+    stroke: rgba(214, 178, 110, 0.35);
+}
+
+.bgb__count {
+    font: 700 21px var(--font-sans);
+    text-anchor: middle;
+    dominant-baseline: central;
+}
+
+.bgb__count--0 {
+    fill: #2a2214;
+}
+
+.bgb__count--1 {
+    fill: var(--board-gold);
+}
+
+.die rect {
+    fill: #f6f1e4;
+    stroke: rgba(0, 0, 0, 0.3);
+}
+
+.die circle {
+    fill: #1a1b1f;
+}
+
+.die--1 rect {
+    fill: #25282e;
+    stroke: rgba(214, 178, 110, 0.55);
+}
+
+.die--1 circle {
+    fill: #efe6cf;
+}
+
+.cube rect {
+    fill: #f2ead6;
+    stroke: #a8843f;
+    stroke-width: 2;
+}
+
+.cube__value {
+    font: 800 19px var(--font-sans);
+    fill: #1d1608;
+    text-anchor: middle;
+    dominant-baseline: central;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.cube__value--wide {
+    font-size: 16px;
+    letter-spacing: -0.04em;
+}
+
+.cube--offered rect {
+    stroke: var(--board-gold);
+    stroke-width: 3;
+}
+
+.cube--offered {
+    filter: drop-shadow(0 6px 8px rgb(0 0 0 / 0.45));
+}
+
+.cube .cube__ring {
+    fill: none;
+    stroke: var(--board-gold);
+    stroke-width: 2;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.cube-chip rect {
+    fill: rgb(20 20 22 / 0.82);
+    stroke: rgb(255 255 255 / 0.18);
+}
+
+.cube-chip text {
+    font: 600 15px var(--font-sans);
+    fill: #fff;
+    text-anchor: middle;
+    dominant-baseline: central;
+}
+
+.dice--dimmed {
+    opacity: 0.4;
+    transition: opacity 0.3s;
+}
