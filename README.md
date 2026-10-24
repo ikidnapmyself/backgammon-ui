@@ -79,10 +79,9 @@ npm run build
 ## Releasing
 
 1. Bump `version` in `package.json` and update `CHANGELOG.md`.
-2. Commit, tag, and push.
-3. Publish a GitHub release. The `Publish` workflow runs checks and does `npm publish` with provenance. It authenticates through npm trusted publishing, so no token is stored. Set it up once under the package's Settings on npmjs.com: repository `ikidnapmyself/backgammon-ui`, workflow `publish.yml`.
-
-To publish by hand, run `npm publish`. The `prepublishOnly` script runs typecheck, tests, and build first.
+2. Commit, then `git tag vX.Y.Z` and push the tag.
+3. Run `npm publish`. The `prepublishOnly` script runs typecheck, tests, and build first.
+4. Create a GitHub release for the tag.
 
 ## License
 
